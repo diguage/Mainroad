@@ -65,6 +65,10 @@
 - id: toc_title
   translation: Contents
 
+# Tags List widget
+- id: toc_title
+  translation: Contents
+
 # Footer
 - id: footer_credits
   translation:
