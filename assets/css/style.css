@@ -172,21 +172,29 @@ h1 {
 h2 {
 	font-size: 24px;
 	font-size: 1.5rem;
+	padding: 8px 0px;
+	border-bottom: 3px double #b9b9b9;
 }
 
 h3 {
 	font-size: 20px;
 	font-size: 1.25rem;
+	padding: 6px 0px;
+	border-bottom:1px solid #d9d9d9;
 }
 
 h4 {
 	font-size: 18px;
 	font-size: 1.125rem;
+	padding: 4px 0px;
+	border-bottom:1px dashed #efefef;
 }
 
 h5 {
 	font-size: 16px;
 	font-size: 1rem;
+	padding: 2px 0px;
+	border-bottom:1px dotted #efefef;
 }
 
 h6 {
@@ -710,14 +718,14 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 
 .content ul,
 .content ol {
-	margin: 0 0 20px 40px;
+	margin: 0 0 20px 20px;
 }
 
 .content ul ul,
 .content ol ol,
 .content ol ul,
 .content ul ol {
-	margin: 0 0 0 40px;
+	margin: 0 0 0 20px;
 }
 
 .content li {
@@ -1323,4 +1331,37 @@ textarea {
 		font-size: 11px;
 		font-size: .6875rem;
 	}
+}
+
+
+ol.arabic {
+    list-style-type: decimal
+}
+
+ol.decimal {
+    list-style-type: decimal-leading-zero
+}
+
+ol.loweralpha {
+    list-style-type: lower-alpha
+}
+
+ol.upperalpha {
+    list-style-type: upper-alpha
+}
+
+ol.lowerroman {
+    list-style-type: lower-roman
+}
+
+ol.upperroman {
+    list-style-type: upper-roman
+}
+
+ol.lowergreek {
+    list-style-type: lower-greek
+}
+
+.audioblock, .imageblock, .listingblock, .literalblock, .stemblock, .videoblock, details {
+    margin-bottom: 1.25em;
 }

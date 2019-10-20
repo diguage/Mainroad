@@ -1,0 +1,31 @@
+<div class="widget-toc widget">
+	<h4 class="widget__title">{{ T "toc_title" }}</h4>
+	<div id="tocContainer"></div>
+</div>
+
+<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/tocbot@4.8.1/dist/tocbot.css"
+/>
+<style>
+	li {
+		margin-left: 8px;
+	}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/tocbot@4.8.1/dist/tocbot.min.js"></script>
+
+<script>
+	window.addEventListener("load", function() {
+		tocbot.init({
+				// Where to render the table of contents.
+				tocSelector: "#tocContainer",
+				// Where to grab the headings to build the table of contents.
+				contentSelector: ".post__content",
+				// Which headings to grab inside of the contentSelector element.
+				headingSelector: "h2, h3, h4",
+				// For headings inside relative or absolute positioned containers within content.
+				hasInnerContainers: true,
+				orderedList: false
+			});
+	});
+</script>
