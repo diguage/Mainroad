@@ -1,0 +1,57 @@
+{{/*归档页面*/}}
+{{/* 参考 https://dp2px.com/2019/08/30/go-hugo1/ [我为什么要从 Hexo 更换到 Hugo - DP2PX.COM]*/}}
+{{ define "main" }}
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        <div class="post-archive">
+            {{ range (where (where .Site.Pages "Type" "post") "Kind" "page").GroupByDate "2006" }}
+            <h2> {{ .Key }} </h2>
+            <ul class="listing">
+                {{ range .Pages }}
+                <li>
+                    <date class="meta-date">{{ .Date.Format "01-02" }}</date>
+                    <a class="archive-title" href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
+                </li>
+                {{ end }}
+            </ul>
+            {{ end }}
+            <br/>
+            <h2> 旧版博客及学习笔记 </h2>
+            <ul class="listing">
+				<li>
+					<a class="archive-title" href="https://wordpress.diguage.com/archives" target="_blank" rel="noopener">
+						旧版"地瓜哥"博客网
+					</a>
+				</li>
+				<li>
+                    <a class="archive-title" href="https://notes.diguage.com/mysql/" target="_blank" rel="noopener">
+                        MySQL 学习笔记<sup>Alpha</sup>
+                    </a>
+				</li>
+				<li>
+					<a class="archive-title" href="https://diguage.github.io/jdk-source-analysis/" target="_blank" rel="noopener">
+						JDK 源码分析<sup>Alpha</sup>
+					</a>
+				</li>
+				<li>
+					<a class="archive-title" href="https://notes.diguage.com/design-patterns/" target="_blank" rel="noopener">
+						深入学习设计模式<sup>Alpha</sup>
+					</a>
+				</li>
+				<li>
+					<a class="archive-title" href="https://diguage.github.io/leetcode/" target="_blank" rel="noopener">
+						LeetCode 刷题笔记<sup>Alpha</sup>
+					</a>
+				</li>
+				<li>
+					<a class="archive-title" href="https://notes.diguage.com/java-concurrency/" target="_blank" rel="noopener">
+						Java 并发学习笔记<sup>Alpha</sup>
+					</a>
+				</li>
+            </ul>
+        </div>
+    </div>
+</article>
+{{ end }}
+
+
