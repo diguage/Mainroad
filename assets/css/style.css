@@ -1096,7 +1096,7 @@ textarea {
 	font-size: 11px;
 	cursor: pointer;
 	background: #fff;
-	border: 1px solid #ebebeb;
+	border: 1px solid #989898;
 	border-radius: 0;
 	outline-offset: -2px;
 	transition: none;
@@ -1344,4 +1344,22 @@ ol.lowergreek {
 
 .audioblock, .imageblock, .listingblock, .literalblock, .stemblock, .videoblock, details {
     margin-bottom: 1.25em;
+}
+
+.post-archive ul {
+	padding-left: 25px;
+}
+.post-archive .meta-date {
+	font-weight: 350;
+	color: #656262;
+	font-size: 90%;
+}
+
+.post-archive ul.listing li {
+	line-height: 175%;
+}
+
+.post-archive ul.listing li .archive-title {
+	font-weight: 450;
+	font-size: 105%;
 }
