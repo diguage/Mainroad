@@ -22,6 +22,31 @@
 	<div class="content list__excerpt post__content clearfix">
 		{{ .Summary }}
 	</div>
+
+	{{ $termName := .Data.Singular }}
+	{{ if and $.Site.Taxonomies.categories (eq $termName "category") }}
+		{{ $term := .Data.Term }}
+		{{ $pages := .Data.Pages }}
+		{{ range first 5 $pages }}
+			<div class="post-archive">
+				<ul class="listing">
+					<li>
+						<date class="meta-date">{{ .Date.Format "2006-01-02" }}</date>
+						<a href="{{ .RelPermalink }}" class="archive-title">
+							{{ .Title }}
+						</a>
+					</li>
+				</ul>
+			</div>
+		{{ end }}
+		{{ if gt (len $pages) 5 }}
+			<div class="more-post">
+{{/*				<a href="{{ .Permalink }}" class="more-post-link">{{ i18n "morePost" }}</a>*/}}
+				<a class="list__footer-postmore " href="{{ .RelPermalink }}">{{ T "post_more" }}</a>
+			</div>
+		{{ end }}
+	{{ end }}
+
 	{{- if .Site.Params.readmore }}
 	{{- if .Truncated }}
 	<div class="list__footer clearfix">

@@ -2,6 +2,9 @@
 - id: read_more
   translation: "阅读全文…"
 
+- id: post_more
+  translation: "查看更多 >>>"
+
 - id: menu_label
   translation: "菜单"
 

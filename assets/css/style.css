@@ -1383,3 +1383,11 @@ ol.lowergreek {
 	font-weight: 450;
 	font-size: 105%;
 }
+
+.list__footer-postmore {
+	margin-top: 50px;
+	margin-left: 12px;
+	font-size: 127%;
+	font-weight: 450;
+	font-style: italic;
+}
