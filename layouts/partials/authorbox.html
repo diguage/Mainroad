@@ -17,7 +17,7 @@
 	{{- end }}
 	{{- with (.Site.Author.bio | safeHTML) }}
 	<div class="authorbox__description">
-		{{ . | markdownify }}
+		{{ . }}
 	</div>
 	{{- end }}
 </div>

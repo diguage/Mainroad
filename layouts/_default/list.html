@@ -11,6 +11,7 @@
 	</div>
 	{{- end }}
 	{{- range .Paginator.Pages }}
+        {{/* 这里引用 summary.html */}}
 		{{- .Render "summary" }}
 	{{- end }}
 </main>

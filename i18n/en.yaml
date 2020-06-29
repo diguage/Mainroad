@@ -2,6 +2,9 @@
 - id: read_more
   translation: "Read more…"
 
+- id: post_more
+  translation: "More post >>>"
+
 - id: menu_label
   translation: "Menu"
 
