@@ -26,12 +26,11 @@
 	{{- end }}
 
 	{{ $style := resources.Get "css/style.css" | resources.ExecuteAsTemplate "css/style.css" . -}}
+	{{ $style := $style | resources.Minify }}
 
 	{{ with .OutputFormats.Get "rss" -}}
 	{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
 	{{ end -}}
-	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
-	{{ $style := $css | resources.Minify -}}
 
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 	{{ range .Site.Params.customCSS -}}
