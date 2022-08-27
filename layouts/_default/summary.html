@@ -27,7 +27,7 @@
 	{{ if and $.Site.Taxonomies.categories (eq $termName "category") }}
 		{{ $term := .Data.Term }}
 		{{ $pages := .Data.Pages }}
-		{{ range first 5 $pages }}
+		{{ range first 10 $pages }}
 			<div class="post-archive">
 				<ul class="listing">
 					<li>
@@ -39,7 +39,7 @@
 				</ul>
 			</div>
 		{{ end }}
-		{{ if gt (len $pages) 5 }}
+		{{ if gt (len $pages) 10 }}
 			<div class="more-post">
 {{/*				<a href="{{ .Permalink }}" class="more-post-link">{{ i18n "morePost" }}</a>*/}}
 				<a class="list__footer-postmore " href="{{ .RelPermalink }}">{{ T "post_more" }}</a>
