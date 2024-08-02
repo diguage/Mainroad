@@ -1,11 +1,11 @@
-{{ if and .Site.DisqusShortname (index .Params "comments" | default "true") (not .Site.IsServer) }}
+{{ if and .Site.Config.Services.Disqus.Shortname (index .Params "comments" | default "true") (not hugo.IsServer) }}
 <section class="comments">
 	{{ template "_internal/disqus.html" . }}
 </section>
 {{ end }}
 
 <!-- changyan -->
-{{ if and .Site.Params.changyanAppid .Site.Params.changyanAppkey (index .Params "comments" | default "true") (not .Site.IsServer) }}
+{{ if and .Site.Params.changyanAppid .Site.Params.changyanAppkey (index .Params "comments" | default "true") (not hugo.IsServer) }}
 <section class="comments">
   <div id="SOHUCS" sid="{{ .RelPermalink }}"></div>
   <script type="text/javascript">
@@ -22,7 +22,7 @@
 {{ end }}
 
 <!-- LiveRe -->
-{{ if and .Site.Params.livereUID (index .Params "comments" | default "true") (not .Site.IsServer) }}
+{{ if and .Site.Params.livereUID (index .Params "comments" | default "true") (not hugo.IsServer) }}
 <section class="comments">
   <div id="lv-container" data-id="city" data-uid="{{ .Site.Params.livereUID }}">
   <script type="text/javascript">
@@ -44,7 +44,7 @@
 {{ end }}
 
 <!-- gitment -->
-{{ if and .Site.Params.gitment.owner (index .Params "comments" | default "true") (not .Site.IsServer) }}
+{{ if and .Site.Params.gitment.owner (index .Params "comments" | default "true") (not hugo.IsServer) }}
 <section class="comments">
   <div id="comments-gitment"></div>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
@@ -69,7 +69,7 @@
 {{ end }}
 
 <!-- gitalk -->
-{{ if and .Site.Params.gitalk.owner (index .Params "comments" | default "true") (not .Site.IsServer) }}
+{{ if and .Site.Params.gitalk.owner (index .Params "comments" | default "true") (not hugo.IsServer) }}
 <section class="comments">
   <div id="gitalk-container"></div>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
@@ -92,7 +92,7 @@
 {{ end }}
 
 <!-- valine -->
-{{ if and .Site.Params.valine.enable (index .Params "comments" | default "true") (not .Site.IsServer) }}
+{{ if and .Site.Params.valine.enable (index .Params "comments" | default "true") (not hugo.IsServer) }}
 <section class="comments">
 <!-- id 将作为查询条件 -->
   {{ if .Site.Params.valine.visitor }}
@@ -121,7 +121,7 @@
 {{ end }}
 
 <!-- utterances -->
-{{ if and .Site.Params.utterances.owner (index .Params "comments" | default "true") (not .Site.IsServer) }}
+{{ if and .Site.Params.utterances.owner (index .Params "comments" | default "true") (not hugo.IsServer) }}
 <section class="comments">
   <script src="https://utteranc.es/client.js"
           repo="{{ .Site.Params.utterances.owner }}/{{ .Site.Params.utterances.repo }}"
