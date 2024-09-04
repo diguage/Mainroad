@@ -54,7 +54,7 @@
       id: '{{ .Date }}',
       title: '{{ .Title }}',
       link: decodeURI(location.href),
-      desc: '{{ .Summary }}',
+      desc: '{{ .Summary | plainify }}',
       owner: '{{ .Site.Params.gitment.owner }}',
       repo: '{{ .Site.Params.gitment.repo }}',
       oauth: {
